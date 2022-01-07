@@ -36,6 +36,7 @@ public class Item : ScriptableObject
 
 	[Header("* if ItemPart is Weapon")]
 	public RuntimeAnimatorController weaponAnim;    // 무기 장착시 변경되는 애니메이터
+	public string attackSound = "DefaultAttack";	// 공격 사운드 (SfxSoundManager 참고)
 	public int minDamage;	// 최소 공격력
 	public int maxDamage;   // 최대 공격력
 	public int attackRange;	// 공격 범위

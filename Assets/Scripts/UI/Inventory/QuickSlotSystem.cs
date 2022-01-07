@@ -41,9 +41,9 @@ public class QuickSlotSystem : MonoBehaviour
 		// 아이템이 있는 경우에만 사용 가능
 		if (pressBtnIdx >= 0 && foodSlots[pressBtnIdx].item)
 		{
-			UseFood(foodSlots[pressBtnIdx].item);
+			Item item = foodSlots[pressBtnIdx].item;
 			foodSlots[pressBtnIdx].AddItemCount(-1);
-			player.PlayerTurnEnd();
+			player.EatFood(item.health, item.satiety, item.mana);
 		}
 	}
 

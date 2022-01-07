@@ -65,6 +65,14 @@ public class Inventory : MonoBehaviour
 		}
 	}
 
+	public string GetWeaponSound()
+	{
+		if (weaponSlot.item == null)
+			return "DefaultAttack";
+
+		return weaponSlot.item.attackSound;
+	}
+
 	public void OpenInventory()
 	{
 		GameData.instance.uiMode = true;

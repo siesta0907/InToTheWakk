@@ -141,6 +141,7 @@ public class GameData : MonoBehaviour
 		foreach (AudioSource a in audioSources)
 		{
 			a.volume = (float)GameData.instance.curSettingData.bgmVolume / 100.0f;
+			SfxSoundManager.instance.SetSfxVolume((float)GameData.instance.curSettingData.sfxVolume / 100.0f);
 		}
 	}
 

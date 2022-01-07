@@ -149,7 +149,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   entityName: "\uC544\uBA54\uBC14"
-  strength: 8
+  minDamage: 1
+  maxDamage: 1
   health: 1
   satiety: -1
   mana: -1
@@ -163,8 +164,10 @@ MonoBehaviour:
   isDead: 0
   hitMat: {fileID: 2100000, guid: 28ebff4e5e6d756408568896a50c41f7, type: 2}
   sr: {fileID: 2708314748510392594}
+  attackSound: Amoeba
   detectRange: 8
   attackChance: 100
+  dropItem: []
 --- !u!114 &6095825906314057951
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -83,6 +83,7 @@ public class TrapEnemy : Enemy
 
 		// 애니메이션 재생 - 공격
 		anim.SetTrigger("Attack");
+		SfxSoundManager.instance.PlaySound(attackSound);
 
 		player.TakeDamage(GetRandomDamage(), this);
 
