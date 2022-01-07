@@ -20,7 +20,8 @@ public class Timer : MonoBehaviour
 	public event Action OnTimerEnd;
 
 	float timeRemain;	// 남은 타이머 시간
-	float time;			// 설정된 타이머 시간
+	float time;         // 설정된 타이머 시간
+	bool isStop = false;
 
 	void Update()
 	{
@@ -29,7 +30,7 @@ public class Timer : MonoBehaviour
 
 	void UpdateTimer()
 	{
-		if (timeRemain > 0)
+		if (timeRemain > 0 && !isStop)
 		{
 			timeRemain -= Time.deltaTime;
 
@@ -52,6 +53,11 @@ public class Timer : MonoBehaviour
 		this.time = time;
 		timeRemain = this.time;
 		timerBar.SetActive(true);
+	}
+
+	public void StopTimer(bool stop)
+	{
+		isStop = stop;
 	}
 
 	public void ClearTimer()

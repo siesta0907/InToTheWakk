@@ -75,6 +75,7 @@ MonoBehaviour:
   - {fileID: 5300079600683471040, guid: 668868027e6ab16489385174186fa4a2, type: 3}
   - {fileID: 2847410282552102794, guid: 5f8fb761a579f434588ae47bd00b4785, type: 3}
   - {fileID: 2847410282552102794, guid: eb7bf1ebce092114495d24a2d1e26799, type: 3}
+  - {fileID: 3941348890165345950, guid: 8e7fdb92fcd96644b80c7464ea81ce18, type: 3}
   projectileChance: 30
   projectileSpd: 5
   projectile: {fileID: 810285004816127030, guid: 4e974c1269a6f7e469f615cb22d053b8,

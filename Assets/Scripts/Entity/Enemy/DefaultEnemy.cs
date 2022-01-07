@@ -92,7 +92,7 @@ public class DefaultEnemy : Enemy
 	{
 		// 플레이어의 이동을 기다리고 공격
 		yield return new WaitForSeconds(attackDelay);
-
+		SfxSoundManager.instance.PlaySound(attackSound);
 		player.TakeDamage(GetRandomDamage(), this);
 	}
 

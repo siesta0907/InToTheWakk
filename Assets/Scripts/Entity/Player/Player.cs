@@ -35,6 +35,7 @@ public class Player : Entity
 	TargetChecker targetChecker;    // 마우스로 선택한 대상 (공격에서 사용)
 	CameraShake cameraShake;		// 카메라 흔들림 효과를 위해 사용
 	NavMesh2D nav;                  // 2D 네비게이션
+	Inventory inv;
 
 	// < 필요한 컴포넌트 - UI >
 	Hud hud;                        // 플레이어의 상태를 표시할 HUD
@@ -80,6 +81,7 @@ public class Player : Entity
 		hud = FindObjectOfType<Hud>();
 		timer = FindObjectOfType<Timer>();
 		entityInfo = FindObjectOfType<EntityInfo>();
+		inv = FindObjectOfType<Inventory>();
 
 		tileRenderer = previewTile.GetComponent<SpriteRenderer>();
 
@@ -174,12 +176,14 @@ public class Player : Entity
 		{
 			// 공격이 여러번할 수 없도록 임시로 입력을 막습니다.
 			SetPlayerTurn(false, 1.0f);
+			timer.StopTimer(true);
 
 			// TODO: 이후에 지울 Debug.Log
 			Debug.Log(targetChecker.selectedEntity.transform.name + "을 공격함!");
 
 			// 애니메이션 재생 - 공격
 			anim.SetTrigger("AttackDefault");
+			SfxSoundManager.instance.PlaySound(inv.GetWeaponSound());
 			LookEntity(targetChecker.selectedEntity, false);
 
 			StartCoroutine(AttackCoroutine(attackDelay, targetChecker.selectedEntity));
@@ -192,6 +196,7 @@ public class Player : Entity
 
 		// 피해를 입히고 플레이어 턴을 끝냅니다.
 		target.TakeDamage(GetRandomDamage(), this);
+		timer.StopTimer(false);
 		PlayerTurnEnd();
 	}
 
@@ -217,7 +222,6 @@ public class Player : Entity
 				GameManager gm = FindObjectOfType<GameManager>();
 				if (pathCnt > moveCount && gm.continueMove == false)
 				{
-					Debug.Log(pathCnt + "칸");
 					return;
 				}
 
@@ -257,6 +261,7 @@ public class Player : Entity
 				PlayerTurnEnd();
 
 				moveLoop--;
+				SfxSoundManager.instance.PlaySound("Walk");
 			}
 			yield return new WaitForSeconds(0.25f);
 		}
@@ -378,6 +383,27 @@ public class Player : Entity
 		}
 	}
 
+	public void EatFood(float health, float satiety, float mana)
+	{
+		anim.SetTrigger("Eat");
+		SetPlayerTurn(false, 1.0f);
+		timer.StopTimer(true);
+		SfxSoundManager.instance.PlaySound("Eat");
+		StartCoroutine(EatFoodCoroutine(health, satiety, mana));
+	}
+
+	IEnumerator EatFoodCoroutine(float health, float satiety, float mana)
+	{
+		yield return new WaitForSeconds(1.0f);
+
+		// 피해를 입히고 플레이어 턴을 끝냅니다.
+		timer.StopTimer(false);
+		AddHealth(health);
+		AddSatiety(satiety);
+		AddMana(mana);
+		PlayerTurnEnd();
+	}
+
 
 	// Override Method
 	protected override void OnDeath(Entity attacker)
@@ -410,5 +436,6 @@ public class Player : Entity
 			anim.SetTrigger("HitReact");
 
 		Debug.Log(attacker.transform.name + "에게 공격당함!");
+		SfxSoundManager.instance.PlaySound("Wakgood_Hit");
 	}
 }

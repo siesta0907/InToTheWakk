@@ -115,7 +115,7 @@ public class RangedEnemy : Enemy
 		yield return new WaitForSeconds(attackDelay);
 
 		// TODO: 이후에 지울 Debug.Log
-		Debug.Log(transform.name + "에게 공격당함!");
+		SfxSoundManager.instance.PlaySound(attackSound);
 		player.TakeDamage(GetRandomDamage(), this);
 	}
 
