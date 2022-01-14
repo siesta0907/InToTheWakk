@@ -1,10 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PickupItem : MonoBehaviour
 {
 	[SerializeField] private Item item;
+	[SerializeField] private Text text_Name;
 	Player player;
 
 	void Awake()
@@ -39,5 +41,12 @@ public class PickupItem : MonoBehaviour
 			}
 			Destroy(this.gameObject);
 		}
+	}
+
+	public void SetData(Item pickItem)
+	{
+		item = pickItem;
+		text_Name.text = item.itemName;
+		GetComponent<SpriteRenderer>().sprite = item.itemImage;
 	}
 }

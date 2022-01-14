@@ -166,18 +166,22 @@ MonoBehaviour:
   isDead: 0
   hitMat: {fileID: 2100000, guid: 28ebff4e5e6d756408568896a50c41f7, type: 2}
   sr: {fileID: 5023159880848250683}
+  attackSound: 
   detectRange: 8
   attackChance: 70
   dropItem:
-  - {fileID: 2847410282552102794, guid: 05073599acdc3774bb67533caeea6278, type: 3}
-  - {fileID: 8838457144334494506, guid: 81a2f01e57460a4448493842469de63c, type: 3}
-  - {fileID: 111433351523190995, guid: e948da35b24a866458c8be780ca6a5de, type: 3}
-  - {fileID: 2824638645154110255, guid: 876a6b4f8832c304a88201eae235d814, type: 3}
-  - {fileID: 7935820734997636092, guid: de2b876a32fa85147bd198e9de506d27, type: 3}
-  - {fileID: 5300079600683471040, guid: 668868027e6ab16489385174186fa4a2, type: 3}
-  - {fileID: 2847410282552102794, guid: 5f8fb761a579f434588ae47bd00b4785, type: 3}
-  - {fileID: 2847410282552102794, guid: eb7bf1ebce092114495d24a2d1e26799, type: 3}
-  - {fileID: 3941348890165345950, guid: 8e7fdb92fcd96644b80c7464ea81ce18, type: 3}
+  - {fileID: 11400000, guid: ecec8899f473cfe4ca0ae8f828306276, type: 2}
+  - {fileID: 11400000, guid: 2add9b65f82b4c945b2c8dee0ef7ff6c, type: 2}
+  - {fileID: 11400000, guid: a433d787290f9f54fb3a9c80e98caa45, type: 2}
+  - {fileID: 11400000, guid: bede7b07193933e4cbdb02b59dc5f2bf, type: 2}
+  - {fileID: 11400000, guid: 5bee2658d24fbcb4e9ee41eced64b072, type: 2}
+  - {fileID: 11400000, guid: f103fd702c8a6ef41b2612392673e2db, type: 2}
+  - {fileID: 11400000, guid: 815b419f3536c5b428b55c2514eb13ab, type: 2}
+  - {fileID: 11400000, guid: 3b141a4e507a3924a97cc7cdbbd9a32f, type: 2}
+  - {fileID: 11400000, guid: 466ce9d9b79b8ab4baa8535d4a2b14a2, type: 2}
+  - {fileID: 11400000, guid: ff05c270e7632104b8da03f06b1ee965, type: 2}
+  dropItemPrefab: {fileID: 2365643938874344337, guid: b56e4aa276d25334095ee55499ec39d7,
+    type: 3}
 --- !u!114 &4046396955673591008
 MonoBehaviour:
   m_ObjectHideFlags: 0
