@@ -2,11 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class PickupItem : MonoBehaviour
 {
 	[SerializeField] private Item item;
-	[SerializeField] private Text text_Name;
+	//[SerializeField] private Text text_Name;
+	[SerializeField] private TextMeshProUGUI text_Name;
 	Player player;
 
 	void Awake()
@@ -47,6 +49,7 @@ public class PickupItem : MonoBehaviour
 	{
 		item = pickItem;
 		text_Name.text = item.itemName;
+		text_Name.color = item.nameColor;
 		GetComponent<SpriteRenderer>().sprite = item.itemImage;
 	}
 }

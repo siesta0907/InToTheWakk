@@ -1,6 +1,6 @@
 {
-    "minDamage": 50,
-    "maxDamage": 100,
+    "minDamage": 1,
+    "maxDamage": 1,
     "health": 10.0,
     "moveCount": 1,
     "attackRange": 1,

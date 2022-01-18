@@ -3,14 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
+using TMPro;
 
 public class Tooltip : MonoBehaviour
 {
 	public static Tooltip instance;
 
 	[SerializeField] private GameObject body;
-	[SerializeField] private Text title;
-	[SerializeField] private Text desc;
+	[SerializeField] private TextMeshProUGUI title;
+	[SerializeField] private TextMeshProUGUI desc;
 
 	RectTransform tf;
 

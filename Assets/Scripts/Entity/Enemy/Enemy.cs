@@ -67,11 +67,11 @@ public class Enemy : Entity
 		if (nav != null) nav.navVolume.SetWallAtPosition(transform.position, false);
 
 		// 아이템 생성
-		if (dropItem.Length > 0)
+		if (dropItem.Length > 0 && dropItemPrefab != null)
 		{
 			Item randomItem = dropItem[Random.Range(0, dropItem.Length)];
 			GameObject dropItemObj = Instantiate(dropItemPrefab, transform.position, Quaternion.identity);
-
+			
 			dropItemObj.GetComponent<PickupItem>().SetData(randomItem);
 		}
 		Destroy(this.gameObject, 6.0f);
