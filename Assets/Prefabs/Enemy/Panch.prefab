@@ -68,10 +68,16 @@ MonoBehaviour:
   detectRange: 8
   attackChance: 70
   dropItem:
+  - {fileID: 11400000, guid: e4c1b149cac0d4546a11804dee33fbe7, type: 2}
+  - {fileID: 11400000, guid: eba5298ef2802854790c42b81e972267, type: 2}
+  - {fileID: 11400000, guid: c8c0d2122d29e13418279bccbd15e81e, type: 2}
+  - {fileID: 11400000, guid: bede7b07193933e4cbdb02b59dc5f2bf, type: 2}
+  - {fileID: 11400000, guid: 4418f59772a822f47bf2cb712a90c18b, type: 2}
+  - {fileID: 11400000, guid: e258a11b909b4b2459c353b2eab917a0, type: 2}
   - {fileID: 11400000, guid: ecec8899f473cfe4ca0ae8f828306276, type: 2}
   - {fileID: 11400000, guid: 2add9b65f82b4c945b2c8dee0ef7ff6c, type: 2}
   - {fileID: 11400000, guid: a433d787290f9f54fb3a9c80e98caa45, type: 2}
-  - {fileID: 11400000, guid: bede7b07193933e4cbdb02b59dc5f2bf, type: 2}
+  - {fileID: 11400000, guid: f8812b5a69517df47b9bc850067a2207, type: 2}
   - {fileID: 11400000, guid: 5bee2658d24fbcb4e9ee41eced64b072, type: 2}
   - {fileID: 11400000, guid: f103fd702c8a6ef41b2612392673e2db, type: 2}
   - {fileID: 11400000, guid: 815b419f3536c5b428b55c2514eb13ab, type: 2}

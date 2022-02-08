@@ -21,6 +21,7 @@ MonoBehaviour:
   itemPart: 0
   def: 0
   weaponAnim: {fileID: 0}
+  attackSound: DefaultAttack
   minDamage: 0
   maxDamage: 0
   attackRange: 0
