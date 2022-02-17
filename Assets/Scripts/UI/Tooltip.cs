@@ -44,9 +44,17 @@ public class Tooltip : MonoBehaviour
 			if (item.itemPart == EquipmentPart.Weapon)
 			{
 				desc.text += "\n\n";
-				desc.text += "<color=yellow>공격력:</color> " + item.minDamage + " ~ " + item.maxDamage + "          \n";
-				desc.text += "<color=yellow>공격범위:</color> " + item.attackRange;
+				desc.text += "<color=yellow>공격력:</color>	" + item.minDamage + " ~ " + item.maxDamage + "          \n";
+				desc.text += "<color=yellow>공격범위:</color>	" + item.attackRange + "\n";
+				desc.text += "<color=yellow>명중률:</color>	" + item.accuracy + "% \n";
 			}
+
+			desc.text += "\n";
+			if (item.crit > 0)
+				desc.text += "+ " + item.crit + "% 크리티컬 확률 \n";
+
+			if (item.def > 0)
+				desc.text += "+ " + item.def + "% 방어력";
 		}
 	}
 

@@ -9,12 +9,17 @@ public class Entity : MonoBehaviour
 	public int minDamage = 1;         // 최소 데미지
 	public int maxDamage = 1;         // 최대 데미지
 	public float health = 1;			// 체력 - 몬스터와 전투시 사용
-	public float satiety = 100;			// 포만감 - 일정량 이상일시 체력 감소 등..
+	public float satiety = 100;         // 포만감 - 일정량 이상일시 체력 감소 등..
+	public float def = 0;               // 방어력 - 100 = 100% 만큼 데미지를 감소
+	public float crit = 0;				// 크리티컬 확률 - 100 = 크리티컬 확률이 100%
 	public float mana = 0;				// 마나
 	public int moveCount = 1;			// 이동 가능한 거리(칸수)
 	public int attackRange = 1;			// 공격가능 거리(칸수)
 	public float attackDelay = 0.25f;	// 공격 딜레이(공격을 맞기까지의 시간)
 	public bool invincible = false;
+
+	float originDef;    // 기본 방어력과 크리티컬 확률이 있을경우,
+	float originCrit;	// 장비 장착 또는 해제시 원래 스텟을 유지하기 위함
 
 	[HideInInspector] public float curHealth = 0;	// 현재 체력입니다.
 	[HideInInspector] public float curSatiety = 0;	// 현재 포만감입니다.
@@ -42,6 +47,9 @@ public class Entity : MonoBehaviour
 		curHealth = health;
 		curSatiety = satiety;
 		curMana = mana;
+
+		originDef = def;
+		originCrit = crit;
 	}
 
 	// * 스탯 관련 함수
@@ -87,6 +95,28 @@ public class Entity : MonoBehaviour
 		moveCount = Mathf.Clamp(moveCount, 0, moveCount);
 	}
 
+	public void AddCriticalChance(float value)
+	{
+		crit += value;
+		crit = Mathf.Clamp(crit, 0.0f, 100.0f);
+	}
+
+	public void ResetCriticalChance()
+	{
+		crit = originCrit;
+	}
+
+	public void AddDefence(float value)
+	{
+		def += value;
+		def = Mathf.Clamp(def, 0.0f, 100.0f);
+	}
+
+	public void ResetDefence()
+	{
+		def = originDef;
+	}
+
 	public void AddAttackRange(int value)
 	{
 		attackRange += value;
@@ -96,6 +126,12 @@ public class Entity : MonoBehaviour
 	public int GetRandomDamage()
 	{
 		int rDamage = Random.Range(minDamage, maxDamage + 1);
+
+		// 크리티컬 계산
+		float randCrit = Random.Range(1.0f, 100.0f);
+		if (randCrit <= crit)
+			rDamage = (int)(rDamage * 1.5f);
+
 		return rDamage;
 	}
 
@@ -113,7 +149,8 @@ public class Entity : MonoBehaviour
 	{
 		if(!isDead)
 		{
-			AddHealth(-damage);
+			// 데미지 감소 계산
+			AddHealth(-damage * (1.0f - (def / 100.0f)));
 			attacker.OnHit(this);
 			StartCoroutine(HitEffectCoroutine());
 

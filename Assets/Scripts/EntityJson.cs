@@ -10,6 +10,8 @@ public class EnemyData
 	public int maxDamage;
 	public float health;
 	public int moveCount;
+	public float crit;
+	public float def;
 	public int attackRange;
 	public int detectRange;
 	public float attackChance;
@@ -68,49 +70,57 @@ public class EntityJson : MonoBehaviour
 
 		// JSON - 팬치
 		EnemyData data_panch = new EnemyData();
-		data_panch.minDamage = 1;
-		data_panch.maxDamage = 1;
-		data_panch.health = 5.0f;
+		data_panch.minDamage = 15;
+		data_panch.maxDamage = 25;
+		data_panch.health = 50.0f;
 		data_panch.moveCount = 1;
+		data_panch.crit = 0.0f;
+		data_panch.def = 0.0f;
 		data_panch.attackRange = 1;
-		data_panch.detectRange = 8;
+		data_panch.detectRange = 4;
 		data_panch.attackChance = 70;
 		json = JsonUtility.ToJson(data_panch, true);
 		File.WriteAllText(SAVE_DIRECTORY + "Panch.json", json);
 
 		// JSON - 느그자
 		EnemyData data_negeza = new EnemyData();
-		data_negeza.minDamage = 1;
-		data_negeza.maxDamage = 1;
-		data_negeza.health = 10.0f;
+		data_negeza.minDamage = 20;
+		data_negeza.maxDamage = 35;
+		data_negeza.health = 100.0f;
 		data_negeza.moveCount = 1;
+		data_negeza.crit = 0.0f;
+		data_negeza.def = 0.0f;
 		data_negeza.attackRange = 1;
-		data_negeza.detectRange = 8;
-		data_negeza.attackChance = 70;
+		data_negeza.detectRange = 6;
+		data_negeza.attackChance = 100;
 		json = JsonUtility.ToJson(data_negeza, true);
 		File.WriteAllText(SAVE_DIRECTORY + "Negeza.json", json);
 
 		// JSON - 왁무새
 		RangedEnemyData data_wakbird = new RangedEnemyData();
-		data_wakbird.minDamage = 5;
-		data_wakbird.maxDamage = 5;
-		data_wakbird.health = 4.0f;
-		data_wakbird.moveCount = 1;
-		data_wakbird.attackRange = 1;
-		data_wakbird.detectRange = 8;
-		data_wakbird.attackChance = 70;
-		data_wakbird.projectileChance = 30;
+		data_wakbird.minDamage = 15;
+		data_wakbird.maxDamage = 20;
+		data_wakbird.health = 50.0f;
+		data_wakbird.moveCount = 2;
+		data_wakbird.crit = 0.0f;
+		data_wakbird.def = 0.0f;
+		data_wakbird.attackRange = 5;
+		data_wakbird.detectRange = 7;
+		data_wakbird.attackChance = 80;
+		data_wakbird.projectileChance = 50;
 		data_wakbird.projectileSpd = 5;
 		json = JsonUtility.ToJson(data_wakbird, true);
 		File.WriteAllText(SAVE_DIRECTORY + "Wakbird.json", json);
 
 		// JSON - 아메바
 		EnemyData data_amoeba = new EnemyData();
-		data_amoeba.minDamage = 8;
-		data_amoeba.maxDamage = 8;
-		data_amoeba.health = 1.0f;
+		data_amoeba.minDamage = 20;
+		data_amoeba.maxDamage = 30;
+		data_amoeba.health = 10.0f;
 		data_amoeba.moveCount = -1;
-		data_amoeba.attackRange = 6;
+		data_amoeba.crit = 0.0f;
+		data_amoeba.def = 0.0f;
+		data_amoeba.attackRange = 3;
 		data_amoeba.detectRange = -1;
 		data_amoeba.attackChance = 100;
 		json = JsonUtility.ToJson(data_amoeba, true);
@@ -122,6 +132,8 @@ public class EntityJson : MonoBehaviour
 		data_pungsin.maxDamage = 10;
 		data_pungsin.health = 50.0f;
 		data_pungsin.moveCount = 1;
+		data_pungsin.crit = 0.0f;
+		data_pungsin.def = 0.0f;
 		data_pungsin.attackRange = 1;
 		data_pungsin.detectRange = -1;
 		data_pungsin.attackChance = 25;
@@ -143,6 +155,8 @@ public class EntityJson : MonoBehaviour
 		data_herusuck.maxDamage = 10;
 		data_herusuck.health = 100.0f;
 		data_herusuck.moveCount = 1;
+		data_herusuck.crit = 0.0f;
+		data_herusuck.def = 0.0f;
 		data_herusuck.attackRange = 1;
 		data_herusuck.detectRange = -1;
 		data_herusuck.attackChance = 100;

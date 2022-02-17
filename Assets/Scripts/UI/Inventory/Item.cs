@@ -33,6 +33,8 @@ public class Item : ScriptableObject
 	[Header("[ Setting - Equipment ]")]
 	public EquipmentPart itemPart;  // 아이템 부위
 	public float def;               // 추가 방어력
+	public float crit;              // 추가 크리티컬 확률
+	public float accuracy = 100;	// 무기 명중률 (100 = 100%)
 
 	[Header("* if ItemPart is Weapon")]
 	public RuntimeAnimatorController weaponAnim;    // 무기 장착시 변경되는 애니메이터

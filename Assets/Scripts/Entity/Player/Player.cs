@@ -97,6 +97,7 @@ public class Player : Entity
 		timer.OnTimerEnd += PlayerTurnEnd;
 
 		UpdateTargetPos();
+		inv.UpdateStatText(this);
 	}
 
 
@@ -195,7 +196,17 @@ public class Player : Entity
 		yield return new WaitForSeconds(time);
 
 		// 피해를 입히고 플레이어 턴을 끝냅니다.
-		target.TakeDamage(GetRandomDamage(), this);
+		// * 장착한 아이템에 따라 피해를 입히지 못할 수 있습니다.
+
+		float randAcc = UnityEngine.Random.Range(1.0f, 100.0f);
+		if (randAcc <= inv.GetWeaponAccuracy())
+		{
+			target.TakeDamage(GetRandomDamage(), this);
+		}
+		else
+		{
+			Debug.Log("공격 적중실패");
+		}
 		timer.StopTimer(false);
 		PlayerTurnEnd();
 	}
