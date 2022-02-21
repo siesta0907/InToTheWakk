@@ -52,7 +52,8 @@ public class Dialog : MonoBehaviour
 
 	public void ShowDialog(DialogData data)
 	{
-		GameData.instance.uiMode = true;
+		//GameData.instance.uiMode = true;
+		GameData.instance.uiLevel++;
 		this.data = data;
 		isOpen = true;
 		back.SetActive(true);
@@ -62,7 +63,8 @@ public class Dialog : MonoBehaviour
 
 	public void EndDialog()
 	{
-		GameData.instance.uiMode = false;
+		//GameData.instance.uiMode = false;
+		GameData.instance.uiLevel--;
 		this.data = null;
 		isOpen = false;
 		back.SetActive(false);

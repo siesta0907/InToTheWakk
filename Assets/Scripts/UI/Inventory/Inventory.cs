@@ -80,14 +80,16 @@ public class Inventory : MonoBehaviour
 
 	public void OpenInventory()
 	{
-		GameData.instance.uiMode = true;
+		//GameData.instance.uiMode = true;
+		GameData.instance.uiLevel++;
 		body.SetActive(true);
 		isOpen = true;
 	}
 
 	public void CloseInventory()
 	{
-		GameData.instance.uiMode = false;
+		//GameData.instance.uiMode = false;
+		GameData.instance.uiLevel--;
 		body.SetActive(false);
 		DragOperation.instance.SetDragSlot(null);
 		Tooltip.instance.HideTooltip();

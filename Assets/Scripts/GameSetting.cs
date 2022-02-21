@@ -85,7 +85,8 @@ public class GameSetting : MonoBehaviour
 
 	public void OpenSetting()
 	{
-		GameData.instance.uiMode = true;
+		//GameData.instance.uiMode = true;
+		GameData.instance.uiLevel++;
 		UpdateUI();
 		back.SetActive(true);
 		isOpen = true;
@@ -93,7 +94,8 @@ public class GameSetting : MonoBehaviour
 
 	public void CloseSetting()
 	{
-		GameData.instance.uiMode = false;
+		//GameData.instance.uiMode = false;
+		GameData.instance.uiLevel--;
 		back.SetActive(false);
 		isOpen = false;
 	}

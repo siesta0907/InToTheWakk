@@ -133,7 +133,8 @@ public class Player : Entity
 	// 클릭하려는 타일을 보여줌 (벽이 아니고, 플레이어 턴이며, 이동중이지 않고, 타겟이 없는경우)
 	private void ShowPreviewTile()
 	{
-		if (!GameData.instance.uiMode && !tileChecker.TileIsWall() && playerTurn
+		if (/*!GameData.instance.uiMode*/
+			GameData.instance.uiLevel == 0 && !tileChecker.TileIsWall() && playerTurn
 			&& nav.velocity == Vector3.zero && targetChecker.selectedEntity == null
 			&& moveLoop <= 0)
 		{
@@ -172,7 +173,8 @@ public class Player : Entity
 	// 대상을 공격함 (턴 소비)
 	private void TryAttack()
 	{
-		if (!GameData.instance.uiMode && playerInput.LButtonClick && playerTurn && targetChecker.selectedEntity
+		if (/* !GameData.instance.uiMode */
+			GameData.instance.uiLevel == 0 && playerInput.LButtonClick && playerTurn && targetChecker.selectedEntity
 			&& !targetChecker.selectedEntity.invincible && targetChecker.GetDistance() <= attackRange)
 		{
 			// 공격이 여러번할 수 없도록 임시로 입력을 막습니다.
@@ -215,7 +217,8 @@ public class Player : Entity
 	// 클릭시 이동 (턴 소비)
 	private void TryMove()
 	{
-		if (!GameData.instance.uiMode && playerInput.LButtonClick && playerTurn && targetChecker.selectedEntity == null) // 왼쪽 버튼을 클릭한 경우
+		if (/*!GameData.instance.uiMode*/
+			GameData.instance.uiLevel == 0 && playerInput.LButtonClick && playerTurn && targetChecker.selectedEntity == null) // 왼쪽 버튼을 클릭한 경우
 		{
 			// 벽이 아니고, 거리가 움직일수 있는 범위보다 작고, 움직이는 상태가 아니면
 			if (!tileChecker.TileIsWall() && /*tileChecker.GetDistance() <= moveCount &&*/ nav.velocity == Vector3.zero
