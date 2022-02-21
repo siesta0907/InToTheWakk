@@ -17,6 +17,9 @@ public class Enemy : Entity
 	[SerializeField] private Item[] dropItem;					// 드랍 아이템
 	[SerializeField] private GameObject dropItemPrefab;
 
+	[SerializeField] protected string fileName;		// json으로 수정된 데이터를 가져올때 파일명
+													// TODO: 밸런스 조절시 삭제합니다.
+
 	// < 필요한 컴포넌트 >
 	protected Player player;
 	protected EntityHealth healthBar;	// 남은체력을 표시하기 위해 사용

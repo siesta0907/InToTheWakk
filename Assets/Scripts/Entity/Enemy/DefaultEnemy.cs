@@ -17,7 +17,7 @@ public class DefaultEnemy : Enemy
 		base.Awake();
 
 		// Load JSON
-		string PATH = Application.dataPath + "/Data/Entity/" + gameObject.name + ".json";
+		string PATH = Application.dataPath + "/Data/Entity/" + fileName + ".json";
 		if(File.Exists(PATH))
 		{
 			string loadjson = File.ReadAllText(PATH);

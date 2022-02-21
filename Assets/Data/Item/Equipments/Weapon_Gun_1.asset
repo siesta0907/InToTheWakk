@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Weapon_Gun_1
   m_EditorClassIdentifier: 
   itemType: 0
-  itemName: "+1 \uAD8C\uCD1D"
+  itemName: "+0 \uAD8C\uCD1D"
   nameColor: {r: 0.6084906, g: 0.9545886, b: 1, a: 1}
   itemDesc: 
   itemImage: {fileID: 21300000, guid: 8f1c81550234fcf41ad18744f7aea462, type: 3}

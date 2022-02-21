@@ -1,9 +1,11 @@
 {
-    "minDamage": 1,
-    "maxDamage": 1,
-    "health": 10.0,
+    "minDamage": 20,
+    "maxDamage": 35,
+    "health": 100.0,
     "moveCount": 1,
+    "crit": 0.0,
+    "def": 0.0,
     "attackRange": 1,
-    "detectRange": 8,
-    "attackChance": 70.0
+    "detectRange": 6,
+    "attackChance": 100.0
 }

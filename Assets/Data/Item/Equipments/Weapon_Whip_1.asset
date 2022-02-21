@@ -13,13 +13,15 @@ MonoBehaviour:
   m_Name: Weapon_Whip_1
   m_EditorClassIdentifier: 
   itemType: 0
-  itemName: "+1 \uCC44\uCC0D"
+  itemName: "+0 \uCC44\uCC0D"
   nameColor: {r: 0.6084906, g: 0.9545886, b: 1, a: 1}
   itemDesc: 
   itemImage: {fileID: 21300000, guid: a141e713c66b88949a175a91d9338b02, type: 3}
   maxCount: 1
   itemPart: 0
   def: 10
+  crit: 0
+  accuracy: 100
   weaponAnim: {fileID: 22100000, guid: ee421f3c4a2d1a7428669751de6d115d, type: 2}
   attackSound: Whip
   minDamage: 10

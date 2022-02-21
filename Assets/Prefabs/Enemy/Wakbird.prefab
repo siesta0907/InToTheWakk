@@ -53,6 +53,8 @@ MonoBehaviour:
   maxDamage: 1
   health: 4
   satiety: -1
+  def: 0
+  crit: 0
   mana: -1
   moveCount: 1
   attackRange: 1
@@ -80,6 +82,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: ff05c270e7632104b8da03f06b1ee965, type: 2}
   dropItemPrefab: {fileID: 2365643938874344337, guid: b56e4aa276d25334095ee55499ec39d7,
     type: 3}
+  fileName: Wakbird
   projectileChance: 30
   projectileSpd: 5
   projectile: {fileID: 810285004816127030, guid: 4e974c1269a6f7e469f615cb22d053b8,

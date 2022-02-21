@@ -1,11 +1,13 @@
 {
-    "minDamage": 5,
-    "maxDamage": 5,
-    "health": 4.0,
-    "moveCount": 1,
-    "attackRange": 1,
-    "detectRange": 8,
-    "attackChance": 70.0,
-    "projectileChance": 30.0,
+    "minDamage": 15,
+    "maxDamage": 20,
+    "health": 50.0,
+    "moveCount": 2,
+    "crit": 0.0,
+    "def": 0.0,
+    "attackRange": 5,
+    "detectRange": 7,
+    "attackChance": 80.0,
+    "projectileChance": 50.0,
     "projectileSpd": 5.0
 }

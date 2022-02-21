@@ -153,6 +153,8 @@ MonoBehaviour:
   maxDamage: 1
   health: 1
   satiety: -1
+  def: 0
+  crit: 0
   mana: -1
   moveCount: -1
   attackRange: 6
@@ -169,6 +171,7 @@ MonoBehaviour:
   attackChance: 100
   dropItem: []
   dropItemPrefab: {fileID: 0}
+  fileName: Amoeba
 --- !u!114 &6095825906314057951
 MonoBehaviour:
   m_ObjectHideFlags: 0

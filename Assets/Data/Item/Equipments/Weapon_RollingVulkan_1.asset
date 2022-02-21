@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Weapon_RollingVulkan_1
   m_EditorClassIdentifier: 
   itemType: 0
-  itemName: "+1 \uB864\uB9C1\uBC1C\uCE78"
+  itemName: "+0 \uB864\uB9C1\uBC1C\uCE78"
   nameColor: {r: 0.6084906, g: 0.9545886, b: 1, a: 1}
   itemDesc: 
   itemImage: {fileID: -6548008519882821858, guid: 2a01691a87fedbe4aa6de6f1c0c0f3d4,

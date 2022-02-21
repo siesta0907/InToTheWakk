@@ -13,13 +13,15 @@ MonoBehaviour:
   m_Name: Weapon_Sword_2
   m_EditorClassIdentifier: 
   itemType: 0
-  itemName: "+2 \uB300\uAC80"
+  itemName: "+1 \uB300\uAC80"
   nameColor: {r: 0.6084906, g: 0.9545886, b: 1, a: 1}
   itemDesc: 
   itemImage: {fileID: 21300000, guid: 08d35e42106584e438bc2da16a4a8b26, type: 3}
   maxCount: 1
   itemPart: 0
   def: 35
+  crit: 0
+  accuracy: 100
   weaponAnim: {fileID: 22100000, guid: 3c149aae4ab9ac34584e2fd6e1f23c8c, type: 2}
   attackSound: Sword
   minDamage: 30
