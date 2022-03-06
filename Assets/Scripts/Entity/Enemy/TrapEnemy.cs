@@ -85,7 +85,7 @@ public class TrapEnemy : Enemy
 		anim.SetTrigger("Attack");
 		SfxSoundManager.instance.PlaySound(attackSound);
 
-		player.TakeDamage(GetRandomDamage(), this);
+		player.TakeDamage(GetRandomDamage(), this, false);
 
 		OnDeath(null);
 		if (nav != null) nav.navVolume.SetWallAtPosition(originPos, false);

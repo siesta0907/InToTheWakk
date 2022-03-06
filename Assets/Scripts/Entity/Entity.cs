@@ -145,12 +145,15 @@ public class Entity : MonoBehaviour
 	}
 
 	// * 공격을 받으면 호출되는 함수 (데미지, 공격을 가한 객체)
-	public virtual void TakeDamage(int damage, Entity attacker)
+	public virtual void TakeDamage(int damage, Entity attacker, bool ignoreDef)
 	{
 		if(!isDead)
 		{
 			// 데미지 감소 계산
-			AddHealth(-damage * (1.0f - (def / 100.0f)));
+			if (ignoreDef)
+				AddHealth(-damage);
+			else
+				AddHealth(-damage * (1.0f - (def / 100.0f)));
 			attacker.OnHit(this);
 			StartCoroutine(HitEffectCoroutine());
 

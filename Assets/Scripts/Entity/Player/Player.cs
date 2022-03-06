@@ -203,7 +203,7 @@ public class Player : Entity
 		float randAcc = UnityEngine.Random.Range(1.0f, 100.0f);
 		if (randAcc <= inv.GetWeaponAccuracy())
 		{
-			target.TakeDamage(GetRandomDamage(), this);
+			target.TakeDamage(GetRandomDamage(), this, false);
 		}
 		else
 		{
@@ -441,14 +441,15 @@ public class Player : Entity
 	}
 
 
-	public override void TakeDamage(int damage, Entity attacker)
+	public override void TakeDamage(int damage, Entity attacker, bool ignoreDef)
 	{
-		base.TakeDamage(damage, attacker);
+		base.TakeDamage(damage, attacker, ignoreDef);
 
 		// 애니메이션 재생 - 피격
 		if(!isDead)
 			anim.SetTrigger("HitReact");
 
+		// TODO: 이후에 지울 Debug.log
 		Debug.Log(attacker.transform.name + "에게 공격당함!");
 		SfxSoundManager.instance.PlaySound("Wakgood_Hit");
 	}

@@ -42,7 +42,7 @@ public class Door : MonoBehaviour
 			// 다음씬 로드
 			player.ResetDelegate();
 			um.FadeOut();
-			yield return new WaitForSeconds(0.5f);
+			yield return new WaitForSeconds(2.0f);
 			SceneManager.LoadScene(stageName);
 		}
 	}

@@ -116,7 +116,7 @@ public class RangedEnemy : Enemy
 
 		// TODO: 이후에 지울 Debug.Log
 		SfxSoundManager.instance.PlaySound(attackSound);
-		player.TakeDamage(GetRandomDamage(), this);
+		player.TakeDamage(GetRandomDamage(), this, false);
 	}
 
 

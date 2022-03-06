@@ -140,7 +140,7 @@ public class Herusuck : Enemy
 		}
 
 		int damage = (skillMode) ? (int)(GetRandomDamage() * (1 + power / 100)) : GetRandomDamage();
-		player.TakeDamage(damage, this);
+		player.TakeDamage(damage, this, false);
 	}
 
 
@@ -231,7 +231,7 @@ public class Herusuck : Enemy
 	// QTE 대성공 - 카운터
 	void QTE_Perfect()
 	{
-		TakeDamage(player.GetRandomDamage(), player);
+		TakeDamage(player.GetRandomDamage(), player, false);
 	}
 
 
@@ -258,7 +258,7 @@ public class Herusuck : Enemy
 		anim.SetTrigger("QTE_" + comboIndex);
 		yield return new WaitForSeconds(GameData.instance.turnDelay + attackDelay_QTE[comboIndex-1]);
 
-		player.TakeDamage(damage_QTE[comboIndex-1], this);
+		player.TakeDamage(damage_QTE[comboIndex-1], this, false);
 		qteIndex++;
 	}
 }

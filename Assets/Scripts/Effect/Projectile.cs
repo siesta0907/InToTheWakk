@@ -37,7 +37,7 @@ public class Projectile : MonoBehaviour
 		Entity entity = collision.gameObject.GetComponent<Entity>();
 		if (entity)
 		{
-			entity.TakeDamage(damage, owner);
+			entity.TakeDamage(damage, owner, false);
 			GetComponent<BoxCollider2D>().enabled = false;
 		}
 	}

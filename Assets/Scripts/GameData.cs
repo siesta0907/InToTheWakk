@@ -49,12 +49,11 @@ public class GameData : MonoBehaviour
 			Destroy(this.gameObject);
 		}
 		#endregion
-
-		CreateOrLoadGameSetting();
 	}
 
 	void Start()
 	{
+		CreateOrLoadGameSetting();
 		Floorlayer = 1;
 		SceneManager.sceneLoaded += OnSceneLoaded;
 	}
