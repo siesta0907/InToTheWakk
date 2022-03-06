@@ -3,6 +3,8 @@
     "maxDamage": 10,
     "health": 100.0,
     "moveCount": 1,
+    "crit": 0.0,
+    "def": 0.0,
     "attackRange": 1,
     "detectRange": -1,
     "attackChance": 100.0,

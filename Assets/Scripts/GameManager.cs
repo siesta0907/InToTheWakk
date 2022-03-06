@@ -57,5 +57,7 @@ public class GameManager : MonoBehaviour
 		Debug.Log("Game Over!");
 		activeTimer = false;
 		gameEnd = true;
+
+		um.ShowGameOverScreen();
 	}
 }

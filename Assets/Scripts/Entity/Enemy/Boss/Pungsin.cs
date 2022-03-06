@@ -128,7 +128,7 @@ public class Pungsin : Enemy
 		player.currentTurnDelay += attackDelay;
 		yield return new WaitForSeconds(GameData.instance.turnDelay + attackDelay);
 
-		player.TakeDamage(GetRandomDamage(), this);
+		player.TakeDamage(GetRandomDamage(), this, false);
 	}
 
 

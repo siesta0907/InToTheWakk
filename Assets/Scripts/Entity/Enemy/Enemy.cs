@@ -14,7 +14,11 @@ public class Enemy : Entity
 	[SerializeField] protected string attackSound;
 	[SerializeField] protected int detectRange = 8;             // 탐지 거리 (탐지거리 내에 들어와야 행동)
 	[SerializeField] protected float attackChance = 70.0f;      // 공격확률 (공격범위 내에 있을경우)
-	[SerializeField] private GameObject[] dropItem;				// 드랍 아이템
+	[SerializeField] private Item[] dropItem;					// 드랍 아이템
+	[SerializeField] private GameObject dropItemPrefab;
+
+	[SerializeField] protected string fileName;		// json으로 수정된 데이터를 가져올때 파일명
+													// TODO: 밸런스 조절시 삭제합니다.
 
 	// < 필요한 컴포넌트 >
 	protected Player player;
@@ -66,9 +70,12 @@ public class Enemy : Entity
 		if (nav != null) nav.navVolume.SetWallAtPosition(transform.position, false);
 
 		// 아이템 생성
-		if (dropItem.Length > 0)
+		if (dropItem.Length > 0 && dropItemPrefab != null)
 		{
-			Instantiate(dropItem[Random.Range(0, dropItem.Length)], transform.position, Quaternion.identity);
+			Item randomItem = dropItem[Random.Range(0, dropItem.Length)];
+			GameObject dropItemObj = Instantiate(dropItemPrefab, transform.position, Quaternion.identity);
+			
+			dropItemObj.GetComponent<PickupItem>().SetData(randomItem);
 		}
 		Destroy(this.gameObject, 6.0f);
 	}

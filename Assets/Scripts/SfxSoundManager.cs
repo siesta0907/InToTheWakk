@@ -60,7 +60,7 @@ public class SfxSoundManager : MonoBehaviour
 
 	public void PlaySound(string soundName)
 	{
-		if (soundName != "" && soundData[soundName].Length <= 0) return;
+		if (soundName == null || soundName.Length <= 0 || soundData[soundName].Length <= 0) return;
 		AudioClip clip = soundData[soundName][Random.Range(0, soundData[soundName].Length)];
 		//AudioClip clip = soundData[soundName];
 		AudioSource emptySource = GetEmptyAudioSource();

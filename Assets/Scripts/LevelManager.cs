@@ -34,8 +34,9 @@ public class LevelManager : MonoBehaviour
            
             Vector3 position = new Vector3(Random.Range(x * (RoomManager.roomsize + 1), x * (RoomManager.roomsize + 1) + RoomManager.roomsize), Random.Range(y * (RoomManager.roomsize + 1), y * (RoomManager.roomsize + 1) + RoomManager.roomsize), 0);
             GameObject myStair =  Instantiate(DoorPrefab, position, Quaternion.identity);
-            
-            GameData gameData = GameObject.Find("GameData").GetComponent<GameData>();
+
+			//GameData gameData = GameObject.Find("GameData").GetComponent<GameData>();
+			GameData gameData = GameData.instance;
 
             gameData.FloorUp();
 

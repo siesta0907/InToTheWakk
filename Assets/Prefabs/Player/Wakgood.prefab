@@ -204,11 +204,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   entityName: "\uC6B0\uC641\uAD73"
-  minDamage: 1
-  maxDamage: 1
-  health: 30
+  minDamage: 0
+  maxDamage: 5
+  health: 100
   satiety: 100
-  mana: 10
+  mana: 50
   moveCount: 3
   attackRange: 1
   attackDelay: 0.25
